@@ -47,7 +47,8 @@ async function postToBlogger(article: {
     //       }
     //     })
     // Kirim ke Blogger melalui API internal
-    const response = await axios.post(`${process.env.NITRO_ORIGIN || 'http://localhost:3000'}/api/posts/create`, postData)
+    const url = process.env.NITRO_ORIGIN || 'http://localhost:3000'
+    const response = await axios.post(`${url}/api/posts/create`, postData)
     if (response.data && response.data.success) {
       return {
         success: true,
