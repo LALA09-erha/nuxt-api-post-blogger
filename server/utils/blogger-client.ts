@@ -51,7 +51,7 @@ export class BloggerClient {
       this.oauth2Client.setCredentials(tokens)
 
       // 🔐 SIMPAN refresh token ke MongoDB
-      if (tokens.refresh_token) {
+      if (tokens.refresh_token) { 
         await saveRefreshToken(tokens.refresh_token)
       }
 
